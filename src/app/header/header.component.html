@@ -7,10 +7,10 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ngClass="{{selectedFeature === 'recipes' ? 'active' : ''}}">
-          <a href="#" (click)="onSelect('recipes')">Recipes</a></li>
-        <li ngClass="{{selectedFeature === 'shopping-list' ? 'active' : ''}}">
-          <a href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+        <li routerLinkActive="active">
+          <a href="#" [routerLink]="['/recipes']">Recipes</a></li>
+        <li routerLinkActive="active">
+          <a href="#" [routerLink]="['/shopping-list']">Shopping List</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
