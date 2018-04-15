@@ -21,6 +21,9 @@ import {ShoppingListService} from './shopping-list/shopping-list.service';
 import {RecipeService} from './recipes/recipe.service';
 import {DataStorageService} from './shared/data-storage.service';
 import {LoggingService} from './services/logging.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import {AuthService} from './auth/auth.service';
 
 
 @NgModule({
@@ -36,7 +39,9 @@ import {LoggingService} from './services/logging.service';
     DropdownDirective,
     ErrorPageComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,13 @@ import {LoggingService} from './services/logging.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ShoppingListService, RecipeService, DataStorageService, LoggingService],
+  providers: [
+    ShoppingListService,
+    RecipeService,
+    DataStorageService,
+    LoggingService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

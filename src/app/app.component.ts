@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import {ShoppingListService} from "./shopping-list/shopping-list.service";
-import {LoggingService} from "./services/logging.service";
-import {RecipeService} from './recipes/recipe.service';
+import {Component, OnInit} from '@angular/core';
+import * as firebase from 'firebase';
+
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,15 @@ import {RecipeService} from './recipes/recipe.service';
   styleUrls: ['./app.component.css'],
   // providers: [ShoppingListService, LoggingService, RecipeService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   loadedFeature = 'recipes';
+
+  ngOnInit() {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyD7ihT7t6sjcC896ni0s5n303GVTRhKO0s',
+      authDomain: 'ng-recipe-book-623ba.firebaseapp.com'
+    });
+  }
 
   onNavigate(feature: string) {
     this.loadedFeature = feature;
