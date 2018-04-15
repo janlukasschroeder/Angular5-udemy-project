@@ -9,7 +9,6 @@ import * as firebase from 'firebase';
   // providers: [ShoppingListService, LoggingService, RecipeService]
 })
 export class AppComponent implements OnInit {
-  loadedFeature = 'recipes';
 
   ngOnInit() {
     firebase.initializeApp({
@@ -18,8 +17,5 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
 
 }
