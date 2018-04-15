@@ -7,7 +7,7 @@ import {RecipeService} from './recipes/recipe.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ShoppingListService, LoggingService, RecipeService]
+  // providers: [ShoppingListService, LoggingService, RecipeService]
 })
 export class AppComponent {
   loadedFeature = 'recipes';
