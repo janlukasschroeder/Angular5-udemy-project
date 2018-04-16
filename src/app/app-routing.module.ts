@@ -13,17 +13,11 @@ import {AuthGuard} from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-  { path: 'recipes', component: RecipesComponent, children: [
-    { path: '', component: RecipeStartComponent },
-    { path: 'new', component:  RecipeEditComponent, canActivate: [AuthGuard] },
-    { path: ':id', component:  RecipeDetailComponent },
-    { path: ':id/edit', component:  RecipeEditComponent, canActivate: [AuthGuard] }
-  ] },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
-  { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-  { path: '**', redirectTo: '/not-found' }
+  // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+  // { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({
